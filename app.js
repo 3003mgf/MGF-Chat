@@ -16,7 +16,7 @@ app
       res.sendFile(`${publicDir}/index.html`)
     })
 
-http.listen(port, "localhost", ()=>{
+http.listen(port, "0.0.0.0", ()=>{
   console.log("Server running at localhost %d", port);
 })
 
