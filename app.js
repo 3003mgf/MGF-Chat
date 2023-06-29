@@ -56,6 +56,7 @@ io.on("connection", (socket)=>{
   socket.on("disconnect", ()=>{
     if(socket.username){
       usersConnected--;
+      delete users[socket.username]
       socket.broadcast.emit("user left", {message: `<b>${socket.username}</b> left the chat`, username: socket.username});
       socket.broadcast.emit("welcome", {message: `Welcome to MGF.IO Chat <br> <b>Users Online:</b> ${usersConnected}`});
     }
